@@ -2,7 +2,7 @@ server:
   port: 8012
 spring:
   datasource:
-    url: jdbc:mysql://192.168.1.171:3306/creditos-microservice
+    url: jdbc:mysql://192.168.1.171:3306/creditos-core
     username: programs
     password: 3SbaYcPuWQ9VOO82
   jpa:
