@@ -11,7 +11,7 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
     hibernate.ddl-auto: update
     generate-ddl: true
-    show-sql: true
+    show-sql: false
 management:
   endpoints:
     web:
@@ -36,6 +36,13 @@ auth:
 administration:
   microservice:
     url: http://192.168.1.171:8003/api/v1/roles
-cliente:
+
+clientes:
   microservice:
-    url: http://192.168.1.171:8004/api/v1/clientes
+    url: http://192.168.1.171:8004/api/v1
+
+jwt:
+  secret: electrohogar
+
+url-back: http://192.168.1.241:8012/api/v1
+url: /data/uploads/
