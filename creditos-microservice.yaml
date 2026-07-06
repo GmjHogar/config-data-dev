@@ -41,8 +41,12 @@ clientes:
   microservice:
     url: http://192.168.1.171:8004/api/v1
 
+sockets:
+  microservice:
+    url: http://192.168.1.171:8009/api/v1
+
 jwt:
   secret: electrohogar
 
-url-back: http://192.168.1.241:8012/api/v1
+url-back: http://192.168.1.171:8012/api/v1
 url: /data/uploads/
