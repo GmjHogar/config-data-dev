@@ -12,6 +12,11 @@ spring:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: false
+  cache:
+    type: redis
+  redis:
+    host: redis-server
+    port: 6379
 management:
   endpoints:
     web:
