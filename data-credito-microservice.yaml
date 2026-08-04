@@ -1,5 +1,5 @@
 server:
-  port: 8014
+  port: 8015
 spring:
   
   application:
@@ -27,7 +27,7 @@ eureka:
     register-with-eureka: true
     service-url.defaultZone: http://192.168.1.171:8761/eureka/
   instance:
-    hostname: 192.168.1.241
+    hostname: 192.168.1.171
     lease-renewal-interval-in-seconds: 30
 
 user:
@@ -45,7 +45,7 @@ administration:
 clientes:
   microservice:
     url: http://192.168.1.171:8005/api/v1
-    
+
 jwt:
   secret: electrohogar
 
