@@ -40,11 +40,11 @@ auth:
 
 administration:
   microservice:
-    url: http://192.168.1.171:8008/api/v1/roles
+    url: http://192.168.1.171:8008/api/v2/roles
 
 clientes:
   microservice:
-    url: http://192.168.1.171:8005/api/v1
+    url: http://192.168.1.171:8005/api/v2
 
 jwt:
   secret: electrohogar
