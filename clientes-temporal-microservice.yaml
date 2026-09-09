@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://host.docker.internal:host-gateway:3306/clientes-temporal
+    url: jdbc:mysql://172.18.0.1:3306/clientes-temporal
     username: electrohogar
     password: GmjHog@r.2026*
 
