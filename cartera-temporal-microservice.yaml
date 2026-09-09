@@ -1,16 +1,20 @@
 server:
   port: 8021
+
 tomcat:
   relaxed-query-chars: ["{", "}"]
+
 spring:
   jackson:
     time-zone: America/Bogota
+
   datasource:
-    url: jdbc:mysql://192.168.1.171:3306/cartera-temporal
+    url: jdbc:mysql://host.docker.internal:3306/cartera-temporal
     username: programs
-    password: 3SbaYcPuWQ9VOO82
+    password: TU_PASSWORD
     hikari:
       max-lifetime: 60000
+
   jpa:
     properties:
       hibernate:
@@ -19,12 +23,15 @@ spring:
     generate-ddl: false
     show-sql: false
     use_sql_comments: false
+
   http:
     encoding:
       charset: UTF-8
       force: true
+
   messages:
     encoding: UTF-8
+
   servlet:
     multipart:
       max-file-size: 1000MB
@@ -35,22 +42,29 @@ management:
     web:
       exposure:
         include: health,info,metrics,logfile
+
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
-    service-url.defaultZone: http://192.168.1.171:8761/eureka/
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
   instance:
-    hostname: 192.168.1.171
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     lease-renewal-interval-in-seconds: 30
+
 user:
   microservice:
-    url: http://192.168.1.171:8002/api/v1/users
+    url: http://user-microservice:8002/api/v1/users
+
 clientes:
-  temporal: http://192.168.1.171:8020/api/v1/clientes
+  temporal: http://clientes-microservice:8020/api/v1/clientes
+
 auth:
   microservice:
-    url: http://192.168.1.171:8001/api/v1
+    url: http://auth-microservice:8001/api/v1
+
 ruta:
   firmas: /uploads/Firmas
   recibos: /uploads/Recibos

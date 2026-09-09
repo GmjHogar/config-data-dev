@@ -1,10 +1,11 @@
 server:
   port: 8006
+
 spring:
   datasource:
-    url: jdbc:mysql://192.168.1.171:3306/cartera_microservice
+    url: jdbc:mysql://host.docker.internal:3306/cartera_microservice
     username: programs
-    password: 3SbaYcPuWQ9VOO82
+    password: TU_PASSWORD
   jpa:
     properties:
       hibernate:
@@ -18,14 +19,18 @@ spring:
       force: true
   messages:
     encoding: UTF-8
+
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
-    service-url.defaultZone: http://192.168.1.171:8761/eureka/
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
   instance:
-    hostname: 192.168.1.171
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     lease-renewal-interval-in-seconds: 30
+
 management:
   endpoints:
     web:
@@ -34,16 +39,19 @@ management:
 
 jwt:
   secret: electrohogarl
+
 administration:
   microservice:
-    url: http://192.168.1.171:8003/api/v1/roles
+    url: http://administration-microservice:8003/api/v1/roles
 
 user:
   microservice:
-    url: http://192.168.1.171:8002/api/v1/users
+    url: http://user-microservice:8002/api/v1/users
+
 auth:
   microservice:
-    url: http://192.168.1.171:8001/api/v1
+    url: http://auth-microservice:8001/api/v1
+
 clientes:
   microservice:
-    url: http://192.168.1.171:8004/api/v1
+    url: http://clientes-microservice:8004/api/v1
