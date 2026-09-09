@@ -9,7 +9,7 @@ spring:
     time-zone: America/Bogota
 
   datasource:
-    url: jdbc:mysql://host.docker.internal:3306/cartera-temporal
+    url: jdbc:mysql://host.docker.internal:host-gateway:3306/cartera-temporal
     username: electrohogar
     password: GmjHog@r.2026*
     hikari:
