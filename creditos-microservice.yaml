@@ -2,9 +2,9 @@ server:
   port: 8012
 spring:
   datasource:
-    url: jdbc:mysql://172.18.0.1:3306/creditos-core
-    username: programs
-    password: 3SbaYcPuWQ9VOO82
+    url: jdbc:mysql://172.18.0.1:3306/creditos_electrohogar_current
+    username: electrohogar
+    password: GmjHog@r.2026*
   jpa:
     properties:
       hibernate:
@@ -26,7 +26,7 @@ eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
-    service-url.defaultZone: http://192.168.1.171:8761/eureka/
+    service-url.defaultZone: http://eureka-microservice:8761/eureka/
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
@@ -34,18 +34,18 @@ eureka:
 
 user:
   microservice:
-    url: http://192.168.1.171:8002/api/v1/users
+    url: http://user-microservice:8002/api/v1/users
 auth:
   microservice:
-    url: http://192.168.1.171:8001/api/v1
+    url: http://auth-microservice:8001/api/v1
 
 administration:
   microservice:
-    url: http://192.168.1.171:8008/api/v2/roles
+    url: http://administration-microservice:8003/api/v1/roles
 
 clientes:
   microservice:
-    url: http://192.168.1.171:8005/api/v2
+    url: http://clientes-microservice:8004/api/v1
 
 sockets:
   microservice:
