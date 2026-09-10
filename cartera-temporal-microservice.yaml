@@ -59,7 +59,7 @@ user:
     url: http://user-microservice:8002/api/v1/users
 
 clientes:
-  temporal: http://clientes-microservice:8020/api/v1/clientes
+  temporal: http://clientes-temporal:8020/api/v1/clientes
 
 auth:
   microservice:
