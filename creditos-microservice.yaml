@@ -33,11 +33,6 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     lease-renewal-interval-in-seconds: 30
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,metrics,logfile
 
 user:
   microservice:
