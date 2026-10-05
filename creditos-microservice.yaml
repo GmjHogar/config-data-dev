@@ -44,7 +44,7 @@ auth:
 
 administration:
   microservice:
-    url: http://administration-microservice:8008/api/v2/roles
+    url: http://administration-microservice:8003/api/v1/roles
 
 clientes:
   microservice:
