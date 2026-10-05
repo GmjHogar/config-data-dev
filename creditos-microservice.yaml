@@ -48,7 +48,7 @@ administration:
 
 clientes:
   microservice:
-    url: http://clientes-microservice:8005/api/v2
+    url: http://clientes-core:8005/api/v2
 
 sockets:
   microservice:
