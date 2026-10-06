@@ -33,6 +33,10 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
     lease-renewal-interval-in-seconds: 30
 
+limpieza:
+  archivos-temporales:
+    cron: "0 0 3 * * *"   
+    borrar: false         
 
 user:
   microservice:
